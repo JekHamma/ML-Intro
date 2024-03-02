@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
-        self.fc1 = nn.Linear(1, 40)
-        self.fc2 = nn.Linear(40, 20)
-        self.fc3 = nn.Linear(20, 1)
+        self.fc1 = nn.Linear(1, 10)
+        self.fc2 = nn.Linear(10, 10)
+        self.fc3 = nn.Linear(10, 1)
 
     def forward(self, x):
         x = F.relu(self.fc1(x))
@@ -51,7 +51,7 @@ print('Finished Training')
         
 # Test the neural network
 input_value = []
-for x in range(-500, 500):
+for x in range(-1000, 1000):
     input_value.append([x/100])
     
 deployment_input_data = np.array(input_value) # Define the input data for deployment
